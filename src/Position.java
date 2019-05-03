@@ -7,6 +7,13 @@ public class Position{
 		this.py = py;
 	}
 	
+	public void setPx(int px){
+		this.px = px;
+	}
+	public void setPy(int py){
+		this.py = py;
+	}
+	
 	public int getPx(){
 		return this.px;
 	}
