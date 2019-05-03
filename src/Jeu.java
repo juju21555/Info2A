@@ -70,29 +70,28 @@ public class Jeu{
 	}
 	
 	public String toString(){
-		String s = " ";
+		String s = "\n ";
 		for (int i=0;i<this.size;i++) {
 			if (i < 10)
 				s += "  "+i+" ";
 			else
 				s += " "+i+" ";
 		}
-		s+="\n";
 		for (int i=0;i<this.size; i++) {
+			s += "\n";
 			s += i+"";
 			for (int j=0; j<this.size; j++)
-				if (plateau[i][j] != null && plateau[i][j].getShow())
+				if (plateau[i][j] != null)// && plateau[i][j].getShow())
 					s += "  "+plateau[i][j].getName()+" ";
-				else if (i>9 && j == 0)
+				else if (i > 9 && j == 0)
 					s += " # ";
 				else if (j == 0 || j == this.size-1 || i == 0 || i == this.size-1)
-					if (this.particule != null && i == this.particule.getPosition().getPx() && j == this.particule.getPosition().getPy())
+					if (this.particule != null && new Position(i,j).equals(this.particule.getPosition()))
 						s += "  0 ";
 					else 
 						s += "  # ";
 				else
 					s += "  * ";
-			s += "\n";
 		}
 		return s;
 	}
